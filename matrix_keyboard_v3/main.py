@@ -2,7 +2,9 @@ from matrix_keyboard_v3 import MatrixKeyboardV3
 import machine
 import time
 
-keyboard = MatrixKeyboardV3(i2c=machine.I2C(0))
+i2c = machine.I2C(0, sda=21, scl=22)
+
+keyboard = MatrixKeyboardV3(i2c=i2c)
 
 keys_dict = {
     MatrixKeyboardV3.KEY_1: "key 1",
